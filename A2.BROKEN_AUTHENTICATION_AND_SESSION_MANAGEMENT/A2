@@ -1,0 +1,6 @@
+logout, password management, timeouts, remember me, secret question, account update, etc. 
+
+1) User authentication credentials aren’t protected when stored using hashing or encryption.
+2) Session IDs are exposed in the URL (e.g., URL rewriting).
+3) Session IDs are vulnerable to session fixation attacks.
+4) Session IDs don’t timeout, or user sessions or authentication tokens, particularly single sign-on (SSO) tokens, aren’t properly invalidated during logout.
