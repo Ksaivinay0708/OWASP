@@ -1,0 +1,8 @@
+IMG SRC
+  <img src="http://user.com/?remember_me=false">
+
+SCRIPT SRC
+  <script src="http://user.com/?remember_me=false">
+
+IFRAME SRC
+  <iframe src="http://user.com/?remember_me=false">
