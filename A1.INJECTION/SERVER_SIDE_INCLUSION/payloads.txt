@@ -1,0 +1,35 @@
+<!--#config timefmt="Date: %d-%m-%y, Time: %T"-->
+<!--#flastmod file="content.html"-->
+<br>
+<!--#config sizefmt="abbrev"-->
+<!--#fsize file="content.html"-->
+<br>
+<!--#echo var="HTTP_USER_AGENT"-->
+<br>
+<!--#exec cmd="ls -la"-->
+<br>
+<!--#exec cgi="cgi-bin/env.py"-->
+
+
+<!-- set default value for SSI variable "q" -->
+<!--#set var="q" value=""-->
+
+<!-- get "q" value from URL -->
+<!--#if expr="QUERY_STRING = /q=([a-zA-Z0-9]+)/"-->
+<!--#set var="q" value="$1"-->
+<!--#endif-->
+
+<!-- print the "q" value -->
+<!--#echo var="q"-->
+
+<!--#if expr='v("QUERY_STRING") = / q=[0-9] /'-->
+
+
+<!--#if expr='%{QUERY_STRING} =~ /q=[a-zA-Z0-9]/'-->
+<!--#set var="f" value="$1"-->
+<!--#endif-->
+
+([a-zA-Z0-9]+)
+
+mb_convert_encoding("<script>alert()</script>", 'UTF-7')
+urldecode(%3Cscript%3Ealert("XSS")%3C%2Fscript%3E)
