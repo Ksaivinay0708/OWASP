@@ -1,0 +1,17 @@
+<!ELEMENT all_obj (people_list,notes)>
+<!ELEMENT people_list (person*)>
+<!ELEMENT person (name,birthdate?,gender?,socialsecuritynumber?,foo?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT birthdate (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT socialsecuritynumber (#PCDATA)>
+<!ELEMENT foo (#PCDATA)>
+<!ELEMENT notes (note*)>
+<!ELEMENT note (from, to, heading?, body)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA) >
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ENTITY writer "Writer-DD">
+<!ENTITY cop "copy: Hello">
+<!ENTITY nbsp "&#xA0;">

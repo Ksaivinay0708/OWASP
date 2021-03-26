@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>XXE</title>
+  </head>
+  <body>
+    <form action="index.php" method="GET">
+    <input type="text" name="q" id="demo">
+    <input type="submit">
+    </form>
+    <script>
+      var a;
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "example.xml", true);
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Typical action to be performed when the document is ready:
+          a = xhttp.responseXML;
+        }
+      };
+      xhttp.send();
+    </script>
+  </body>
+
+
+</html>
