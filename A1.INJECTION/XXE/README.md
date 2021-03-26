@@ -1,0 +1,1 @@
+Before using this files, you could deploy two hosts with hostnames user.com and hacker.com. After this, move files from relevant directories to root directories of hostnames. You may use the virtual servers with the hostnames listed above. Another way - deploy virtual machine, get up the web-server, and change the /etc/hosts files on both systems (host and guest)
